@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pangea/model/business_logic.dart';
+import '../../model/business_logic.dart';
+import '../widgets/lis_view_tile.dart';
 import '../../components/busines_logic_list.dart';
 import '../widgets/header_with_text.dart';
-import '../../constants.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/HomeScreen';
@@ -11,60 +11,23 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
-      appBar: buildAppbar(),
+      appBar: buildAppbar(context),
       body: Column(
         children: [
-          const HeaderWithTextfield(),
+          const HeaderWithTextfield(), // Area with search text field
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
+
+              //List view to iterate through the list of business logics
               child: ListView.builder(
                 itemBuilder: (ctx, index) {
                   return InkWell(
                     onTap: () {},
-                    child: Card(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: _logicList[index].colour,
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        height: 70,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(
-                              _logicList[index].iconName,
-                              color: Colors.white70,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  _logicList[index].logicName,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  _logicList[index].description,
-                                  style: TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                    child: CustomListViewTile(
+                      index: index,
+                      logicList: _logicList,
                     ),
                   );
                 },
@@ -77,7 +40,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildAppbar() {
+//Code for App Bar
+  AppBar buildAppbar(BuildContext ctx) {
     return AppBar(
       elevation: 0,
       leading: IconButton(
@@ -88,17 +52,20 @@ class HomeScreen extends StatelessWidget {
       ),
       actions: [
         Padding(
-          padding: EdgeInsets.only(right: 5),
+          padding: const EdgeInsets.only(right: 5),
           child: IconButton(
-            icon: Icon(Icons.logout),
-            onPressed: () {},
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              //routes to login page
+              Navigator.popAndPushNamed(ctx, '/');
+            },
           ),
         )
       ],
       title: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: const [
             Text(
               "Welcome",
               style: TextStyle(fontSize: 10.0),

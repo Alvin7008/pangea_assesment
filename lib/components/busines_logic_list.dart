@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/business_logic.dart';
 
-List<BusinessLogic> busineesLogicList = [
+final List<BusinessLogic> busineesLogicList = [
   BusinessLogic(
       colour: const Color(0xffd68226),
       iconName: Icons.video_camera_back_outlined,

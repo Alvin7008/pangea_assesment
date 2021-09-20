@@ -4,7 +4,7 @@ import '../../constants.dart';
 
 class CustTextButton extends StatelessWidget {
   final String text;
-  final onClick;
+  final VoidCallback onClick;
 
   CustTextButton({required this.text, required this.onClick});
 

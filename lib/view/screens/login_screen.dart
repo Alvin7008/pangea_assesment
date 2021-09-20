@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';
@@ -11,21 +10,24 @@ import '../widgets/cust_text_button.dart';
 class LoginScreen extends StatefulWidget {
   static const routeName = '/loginScreen';
 
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  //boolean to set progress indicator
   bool _loading = false;
 
+//function for login
   void _openLoginScreen(ctx) {
     setState(() {
       _loading = true;
     });
 
-    Timer(Duration(seconds: 2), () {
+    //Mock delay for login
+    Timer(const Duration(seconds: 2), () {
       Navigator.popAndPushNamed(ctx, HomeScreen.routeName);
     });
   }
@@ -40,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const LogoWithTitle(),
+              const LogoWithTitle(), //top header contain logo and title
               const SizedBox(
                 height: 20.0,
               ),

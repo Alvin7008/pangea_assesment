@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Unified Medical File',
       theme: ThemeData(
-        appBarTheme: AppBarTheme(backgroundColor: kAppBarBackgound),
+        appBarTheme: const AppBarTheme(backgroundColor: kAppBarBackgound),
         primaryColor: kPrimaryColor,
         backgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
@@ -29,8 +29,8 @@ class _MyAppState extends State<MyApp> {
       // home: LoginScreen(),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => LoginScreen(),
-        HomeScreen.routeName: (ctx) => HomeScreen(),
+        '/': (ctx) => const LoginScreen(), //login Screen or landing screen
+        HomeScreen.routeName: (ctx) => HomeScreen(), //logged in screen
       },
     );
   }

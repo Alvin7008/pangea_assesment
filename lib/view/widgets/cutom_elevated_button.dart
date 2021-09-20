@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustElevatedButton extends StatelessWidget {
-  final size;
+  final Size size;
   final Function onclick;
   final bool loading;
 

@@ -11,7 +11,7 @@ class LogoWithTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 50.0,
           width: 50.0,
           child: Image.asset(

@@ -25,7 +25,8 @@ class HeaderWithTextfield extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0)),
                   height: 30,
-                  margin: EdgeInsets.symmetric(horizontal: kdefaultPadding),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: kdefaultPadding),
                   child: Row(
                     children: [
                       Padding(
