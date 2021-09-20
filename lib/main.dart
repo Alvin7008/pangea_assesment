@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pangea/view/screens/home_screen.dart';
-import './constants.dart';
+import 'components/constants.dart';
 import './view/screens/login_screen.dart';
 
 void main() {

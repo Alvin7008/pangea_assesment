@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pangea/constants.dart';
+import 'package:pangea/components/constants.dart';
 
 class HeaderWithTextfield extends StatelessWidget {
   const HeaderWithTextfield({Key? key}) : super(key: key);
